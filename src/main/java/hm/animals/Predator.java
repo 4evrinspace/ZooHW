@@ -1,4 +1,4 @@
-package animals;
+package hm.animals;
 
 import lombok.ToString;
 
@@ -7,4 +7,6 @@ abstract public class Predator extends Animal {
     public Predator(String name, int food) {
         super(name, food);
     }
+
+
 }

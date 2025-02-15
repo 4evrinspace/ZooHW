@@ -1,9 +1,9 @@
-package factories;
+package hm.factories;
 
 import org.springframework.stereotype.Component;
-import things.Computer;
-import things.Table;
-import things.Thing;
+import hm.things.Computer;
+import hm.things.Table;
+import hm.things.Thing;
 import java.util.Map;
 import java.util.function.Supplier;
 

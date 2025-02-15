@@ -1,6 +1,6 @@
-package animals;
+package hm.animals;
 
-import interfaces.IsKind;
+import hm.interfaces.IsKind;
 import lombok.Getter;
 import lombok.ToString;
 
@@ -17,6 +17,7 @@ abstract public class Herbo extends Animal implements IsKind {
         this.kindness = kindness;
     }
 
+
     @Override
     public int getKindness() {
         return kindness;
@@ -24,7 +25,10 @@ abstract public class Herbo extends Animal implements IsKind {
 
     @Override
     public void setKindness(int kindness) {
-        throw new UnsupportedOperationException("Inventory number of animal cannot be changed.");
+        if (kindness < 0 || kindness > 10) {
+            throw new IllegalArgumentException("Kindness should be in range [0, 10]");
+        }
+        this.kindness = kindness;
     }
 
     @Override

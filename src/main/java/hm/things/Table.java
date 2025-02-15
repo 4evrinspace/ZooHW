@@ -1,4 +1,4 @@
-package things;
+package hm.things;
 
 import lombok.ToString;
 

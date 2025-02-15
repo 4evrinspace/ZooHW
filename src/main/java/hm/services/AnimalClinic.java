@@ -1,6 +1,6 @@
-package services;
+package hm.services;
 
-import animals.Animal;
+import hm.animals.Animal;
 import org.springframework.stereotype.Component;
 import java.util.Random;
 
@@ -8,6 +8,6 @@ import java.util.Random;
 public class AnimalClinic {
     public boolean isHealthy(Animal toCheck) {
         Random rng = new Random();
-        return rng.nextBoolean();
+        return true;
     }
 }

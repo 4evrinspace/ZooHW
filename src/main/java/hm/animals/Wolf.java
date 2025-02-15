@@ -1,4 +1,4 @@
-package animals;
+package hm.animals;
 
 public class Wolf extends Predator {
     public Wolf(String name, int food) {

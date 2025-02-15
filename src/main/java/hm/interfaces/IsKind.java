@@ -1,4 +1,4 @@
-package interfaces;
+package hm.interfaces;
 
 public interface IsKind {
     public int getKindness();

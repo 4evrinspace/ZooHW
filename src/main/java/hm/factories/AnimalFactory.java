@@ -1,11 +1,11 @@
-package factories;
+package hm.factories;
 
-import animals.Animal;
-import animals.Herbo;
-import animals.Monkey;
-import animals.Rabbit;
-import animals.Tiger;
-import animals.Wolf;
+import hm.animals.Animal;
+import hm.animals.Herbo;
+import hm.animals.Monkey;
+import hm.animals.Rabbit;
+import hm.animals.Tiger;
+import hm.animals.Wolf;
 import java.util.Map;
 import org.springframework.stereotype.Component;
 

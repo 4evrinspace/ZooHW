@@ -1,8 +1,10 @@
-package things;
+package hm.things;
 
-import interfaces.IInventory;
-import interfaces.IsNameable;
+import hm.interfaces.IInventory;
+import hm.interfaces.IsNameable;
+import lombok.ToString;
 
+@ToString
 abstract public class Thing implements IInventory, IsNameable {
 
     private int number;

@@ -1,10 +1,11 @@
-package services;
+package hm.services;
 
-import factories.AnimalFactory;
-import factories.ThingFactory;
+import hm.factories.AnimalFactory;
+import hm.factories.ThingFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 @Component
 public class ConsoleUI {
@@ -32,6 +33,7 @@ public class ConsoleUI {
             System.out.println("q - to quit");
             String curCommand = scanner.nextLine();
             switch (curCommand) {
+
                 case "1" -> {
                     addAnimal();
                 }
@@ -56,6 +58,11 @@ public class ConsoleUI {
                     System.out.println("Invalid command. Try again.");
                 }
             }
+            try {
+                TimeUnit.SECONDS.sleep(1);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
         }
     }
 
@@ -67,19 +74,25 @@ public class ConsoleUI {
         System.out.println("Enter food consumption (kg):");
         int food = scanner.nextInt();
         scanner.nextLine();
-        int kindness = 0;
+        Integer kindness = null;
         if (animalFactory.isHerbo(type)) {
             System.out.println("Enter kindness level of your animal (0-10):");
             kindness = scanner.nextInt();
             scanner.nextLine();
         }
-        zoo.addAnimal(animalFactory.createAnimal(type, name,  food, kindness));
+        boolean accepted = zoo.addAnimal(animalFactory.createAnimal(type, name,  food, kindness));
+        if (!accepted) {
+            System.out.println("Animal was not accepted.");
+        }
     }
 
     public void addThing() {
         System.out.println("Enter thing type (table, computer):");
         String type = scanner.nextLine();
-        zoo.addThing(thingFactory.createThing(type));
+        boolean accepted = zoo.addThing(thingFactory.createThing(type));
+        if (!accepted) {
+            System.out.println("Thing was not accepted.");
+        }
     }
 
 }

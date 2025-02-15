@@ -1,4 +1,4 @@
-package interfaces;
+package hm.interfaces;
 
 public interface IsNameable {
     public String getName();

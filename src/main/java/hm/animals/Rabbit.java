@@ -1,4 +1,4 @@
-package animals;
+package hm.animals;
 
 import lombok.ToString;
 

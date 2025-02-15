@@ -1,9 +1,8 @@
-package animals;
+package hm.animals;
 
-import interfaces.IAlive;
-import interfaces.IInventory;
-import interfaces.IsNameable;
-import lombok.Getter;
+import hm.interfaces.IAlive;
+import hm.interfaces.IInventory;
+import hm.interfaces.IsNameable;
 import lombok.ToString;
 
 // Немного не очевидно по условию, но "В ходе беседы мы выяснили, что инвентаризации подлежат не
@@ -13,7 +12,7 @@ import lombok.ToString;
 @ToString
 abstract public class Animal implements IAlive, IInventory, IsNameable {
 
-    private final int food;
+    private int food;
     private int number;
     private final String name;
 
@@ -60,6 +59,9 @@ abstract public class Animal implements IAlive, IInventory, IsNameable {
 
     @Override
     public void setFood(int food) {
-        throw new UnsupportedOperationException("Number of food to eat for animal daily cannot be changed.");
+        if (food < 0) {
+            throw new IllegalArgumentException("Food of animal cannot be negative.");
+        }
+        this.food = food;
     }
 }

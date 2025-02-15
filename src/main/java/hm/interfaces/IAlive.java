@@ -1,4 +1,4 @@
-package interfaces;
+package hm.interfaces;
 
 public interface IAlive {
     public int getFood();
